@@ -1,0 +1,235 @@
+from IPython.display import clear_output
+print('WELCOME TO FARM CONNECT')
+how=open("demofile3.txt", "a")
+how.write('')
+how.close()
+now=open("demofile4.txt", "a")
+now.write('')
+now.close()
+def total():
+    cropinfo=('1.Paddy , 2.Cotton , 3.Corn , 4.Bazra , 5.Wheat , 6.Greengram , 7.Blackgram , 8.Millets , 9.Mangoes , 10.Oranges , 11.Potato , 12.Tomato , 13.Onion')
+    thisdict = {
+    "1": 3000,
+    "2": 7000,
+    "3": 5000,
+    '4': 8000,
+    '5': 2000,
+    '6': 4000,
+    '7': 6000,
+    '8': 9000,
+    '9': 10000,
+    '10': 8000,
+    '11': 11000,
+    '12': 9000,
+    '13':12000,
+    }
+    def faml():
+        formlist=[]
+        ff = open("demofile3.txt", "r")
+        reader1=ff.read()
+        formlist.append(reader1)
+        farmstring=str(formlist)
+        farmlogininputph=input('Enter your phone number :\n')
+        if 11>len(farmlogininputph)>9:
+            if farmlogininputph in(farmstring):
+                forminputps=input('Enter your password :\n')
+                if len(forminputps)>5:
+                    if forminputps in(str(farmlogininputph)+',,'+str(farmstring)):
+                        clear_output(wait=True)
+                        print('You are now loged in')
+                        print('Namasthe')
+                        print(cropinfo)
+                        filenamez = input('Enter serial number of the crop that you want to sell:\n')
+                        clear_output(wait=True)
+                        if filenamez in ['1','2','3','4','5','6','7','8','9','10','11','12','13']:
+                            with open (filenamez, "a") as fun:
+                                zi=input('What is the phone number that you would like to get contacted :\n')
+                                fun.write(zi)
+                                fun.write(' is the phone number of ')
+                                zx=input('What is the name you would like to be called :\n')
+                                fun.write('"')
+                                fun.write(zx)
+                                fun.write('"')
+                                pilla=input('Where are you from :\n')
+                                fun.write(' from ')
+                                fun.write(pilla)
+                                pradhyumana=input("What is the cost(in rupees) that you would like to get for your crop per 10 kg's :\n")
+                                fun.write(', he can sell the crop you want for : ')
+                                fun.write(pradhyumana)
+                                fun.write("Rs(per 10kg's)\n")
+                                fun.close()
+                                clear_output(wait=True)
+                                print('Your data is saved\nYou may get calls or messages for the phone number you had given above\nThankyou')
+                        else:
+                            print("Can't be sold")
+                    else:
+                        print('Wrong password\nTry again')
+                        famlo()
+                else:
+                    print('Hint: Password should contain atleast 6 Alphabets\nTry again')
+                    famlo()
+            else:
+                print('Wrong info or not an user\nTry again')
+                famlo()
+        else:
+            print('You phone number is invalid\nTry again')
+            famlo()
+    def cosl():
+        costmerlist=[]
+        fc = open("demofile4.txt", "r")
+        reader1=fc.read()
+        costmerlist.append(reader1)
+        coststrint=str(costmerlist)
+        clear_output(wait=True)
+        costinputph=input('Enter your phone number :\n')
+        if 11>len(costinputph)>9:
+            if costinputph in(coststrint):
+                costinputps=input('Enter your password :\n')
+                if len(costinputps)>5:
+                    if costinputps in(str(costinputph)+',,'+str(coststrint)):
+                        clear_output(wait=True)
+                        print('Logged in')
+                        costname=input('What would you like to be called :\n')
+                        print('Hello',costname)
+                        print(cropinfo)
+                        a=input('Enter the serial number of the crop that you want :\n')
+                        print("Cost (MSP) per 10 Kg's is",thisdict[a])
+                        douwant=input('would you like to buy the crop (yes) or (no) :\n')
+                        clear_output(wait=True)
+                        if douwant=='yes':
+                            with open (a, "r") as funs:
+                                funs.close()
+                            kole=open(a, "r")
+                            print(kole.read())
+                            print('You can contact the above numbers for the yield')
+                        else:
+                            print('Thankyou')
+                    else:
+                        print('Wrong password\nTry again')
+                        coslo()
+                else:
+                    print('Hint: password should contain atleast 6 Alphabets\nTry again')
+                    coslo()
+            else:
+                print('Wrong info or not an user\nTry again')
+                coslo()
+        else:
+            print('You phone number is invalid\nTry again')
+            coslo()
+    try:
+        formerorcostmer=input('Are you a Farmer(f)👨🏻‍🌾 or a Customer(c)🧔🏻 :\n')
+        clear_output(wait=True)
+        if formerorcostmer=='f':
+            def famlo():
+                clear_output(wait=True)
+                loginorsignupofformer=input('Would you like to signup(1) or login(2) :\n')
+                clear_output(wait=True)
+                if loginorsignupofformer=='1':
+                    clear_output(wait=True)
+                    phnoofformer=input('Enter your phone number :\n📞')
+                    if 9<len(phnoofformer)<11:
+                        foarmerlistx=[]
+                        fcx = open("demofile3.txt", "r")
+                        reader121=fcx.read()
+                        foarmerlistx.append(reader121)
+                        formrstrintx=str(foarmerlistx)
+                        if phnoofformer not in formrstrintx:                    
+                            passwordofformer=input('Give a "6" digit password which contain only alphabets :\n')
+                            clear_output(wait=True)
+                            if len(passwordofformer)>5:
+                                if isinstance(passwordofformer, str)==True:
+                                    phnoandpasswordofformer=','+phnoofformer+','+passwordofformer+','
+                                    ff = open("demofile3.txt", "a")
+                                    ff.write(phnoandpasswordofformer)
+                                    ff.close()
+                                    megi=input('You are signedup do you want to login ["yes" or "no"] :\n')
+                                    clear_output(wait=True)
+                                    if megi=='yes':
+                                        clear_output(wait=True)
+                                        faml()
+                                    if megi=='no':
+                                        print('You can login later')
+                                    if megi not in'yesno':
+                                        print('Only yes and no are allowed')
+                                        famlo()
+                                else:
+                                    print('Only "Alpphabets" allowed\nTry again')
+                                    famlo()
+                            else:
+                                print('Password should have atleast 6 charecters\nTry again')
+                                famlo()
+                        if phnoofformer in formrstrintx:
+                            print('You are already an user, please login\nTry again')
+                            famlo()
+                    else:
+                        print('Invalid 📞phone number\nTry again')
+                        famlo()
+                if loginorsignupofformer=='2':
+                    clear_output(wait=True)
+                    faml()
+                elif loginorsignupofformer not in '12' or loginorsignupofformer=='12':
+                    print('Only 1 and 2 are allowed\nTry again')
+                    famlo()
+            famlo()
+        elif formerorcostmer=='c':
+            def coslo():
+                clear_output(wait=True)
+                loginorsignupocostmer=input('Would you like to signup(1) or login(2) if you are new first signup :\n')
+                clear_output(wait=True)
+                if loginorsignupocostmer=='1':
+                    clear_output(wait=True)
+                    phnoocostmer=input('Enter your phone number :\n📞')
+                    if 9<len(phnoocostmer)<11:
+                        costmerlistxz=[]
+                        fcz = open("demofile4.txt", "r")
+                        reader14=fcz.read()
+                        costmerlistxz.append(reader14)
+                        coststrintxz=str(costmerlistxz)
+                        if phnoocostmer not in coststrintxz:
+                            passwordocostmer=input('Give an 6 dgt password should contain only alphabets :\n')
+                            clear_output(wait=True)
+                            if len(passwordocostmer)>5:
+                                if isinstance(passwordocostmer, str)==True:
+                                    phnoandpasswordocostmer=','+phnoocostmer+','+passwordocostmer+','
+                                    fc = open("demofile4.txt", "a")
+                                    fc.write(phnoandpasswordocostmer)
+                                    fc.close()
+                                    clear_output(wait=True)
+                                    print('You are signedup do you want to login["yes" or "no"]')
+                                    sashank=input()
+                                    clear_output(wait=True)
+                                    if sashank=='yes':
+                                        clear_output(wait=True)
+                                        cosl()
+                                    if sashank=='no':
+                                        clear_output(wait=True)
+                                        print('You can login later')
+                                    if sashank not in'yesno':
+                                        print('Only yes and no are allowed')
+                                        coslo()
+                                else:
+                                    print('Only alphabits are allowed\nTry again')
+                                    coslo()
+                            else:
+                                print('Password should have atleast 6 charecters\nTry again')
+                                coslo()
+                        if phnoocostmer in coststrintxz:
+                            print('You are alredy an user please login\nTry again')
+                            coslo()
+                    else:
+                        print('Invalid 📞Phone number\nTry again')
+                        coslo()
+                if loginorsignupocostmer=='2':
+                    clear_output(wait=True)
+                    cosl()
+                elif loginorsignupocostmer not in '12' or loginorsignupocostmer=='12':
+                    print('Only "1" and "2" are allowed\nTry again')
+                    coslo()
+            coslo()
+        elif formerorcostmer not in 'fc' or formerorcostmer=='fc':
+            print('Only "f" and "c" are allowed\nTry again')
+            total()
+    except Exception as erer:
+        print('Some thing is not quite well please follow the given instructions and try again')
+        total()
+total()
